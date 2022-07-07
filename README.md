@@ -19,6 +19,9 @@ services:
       - ${ES_SERVER_PORT}:9200
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=true
+      - xpack.security.transport.ssl.enabled=false
+      - FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS=true
       - "ES_JAVA_OPTS=${ES_JAVA_OPTS}"
       - "TAKE_FILE_OWNERSHIP=true"
     volumes:
